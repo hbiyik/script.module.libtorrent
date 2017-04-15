@@ -1,4 +1,7 @@
 import abi
 import sys
 
-sys.modules[__name__] = abi.loadfile("script.module.libtorrent", "libtorrent")
+
+__m = abi.load("script.module.libtorrent", "libtorrent")
+import sys
+sys.modules[__name__] = __m
